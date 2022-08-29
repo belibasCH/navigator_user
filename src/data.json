@@ -1,0 +1,56 @@
+{
+    "person": {
+        "name": "",
+        "company": "",
+        "email": "",
+        "tel": ""
+    },
+    "projekt": {
+        "projektname": "",
+        "projektbeschreibung": "",
+        "zielgruppe": "",
+        "ziel": ""
+    },
+
+    "navigator": {
+        "id": 1,
+        "angebot": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": 0
+        },
+        "rahmenbedingungen": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": 0
+        },
+        "geisteshaltung": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": 0
+        },
+        "kompetenz": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": 0
+        },
+        "infrastruktur": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": 0
+        },
+        "kommunikation": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": 0
+        }
+    }
+
+
+}

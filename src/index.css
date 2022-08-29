@@ -15,13 +15,33 @@ code {
 h1 {
     font-family: Merriweather;
     font-size: 2rem;
+    line-height: 4rem;
 }
 
 h2 {
     font-family: Merriweather;
     font-size: 1.3rem;
+    line-height: 3rem;
 }
 
 p {
     font-family: Assistant;
+}
+
+.is-active {
+    color: red;
+}
+
+.navigator {
+    height: 60vh;
+    margin-left: -25vh;
+    top: 45.2%;
+    transform: translateY(-50%) rotate(-30deg);
+}
+
+.navigator_shine {
+    height: 80vh;
+    margin-left: -17vh;
+    top: 50%;
+    transform: translateY(-50%);
 }
