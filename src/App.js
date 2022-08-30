@@ -10,18 +10,82 @@ import Last from "./components/Pages/Last"
 function App() {
     //const url = "http://localhost:8080/server";
     const [data, setData] = useState({
-
-        projektname: "",
-        projektbeschreibung: "",
-        zielgruppe: "",
-        ziel: "",
+        person: {
+            name: "",
+            company: "",
+            email: "",
+            tel: ""
+        },
+        projekt: {
+            projektname: "",
+            projektbeschreibung: "",
+            zielgruppe: "",
+            ziel: ""
+        },
+    
+        navigator: {
+            id: 1,
+            angebot: {
+                a: "",
+                b: "",
+                c: "",
+                d: 0
+            },
+            rahmenbedingungen: {
+                a: "",
+                b: "",
+                c: "",
+                d: 0
+            },
+            geisteshaltung: {
+                a: "",
+                b: "",
+                c: "",
+                d: 0
+            },
+            kompetenz: {
+                a: "",
+                b: "",
+                c: "",
+                d: 0
+            },
+            infrastruktur: {
+                a: "",
+                b: "",
+                c: "",
+                d: 0
+            },
+            kommunikation: {
+                a: "",
+                b: "",
+                c: "",
+                d: 0
+            }
+           
+        }
+    
+    
     })
-    const handle = (e) => {
+    
+    function handleProjectdescription(e) {
         const newdata = { ...data }
-        newdata[e.target.id] = e.target.value
+        newdata.projekt[e.target.id] = e.target.value
         setData(newdata)
         console.log(newdata)
     }
+    function handlePerson(e) {
+        const newdata = { ...data }
+        newdata.projekt[e.target.id] = e.target.value
+        setData(newdata)
+        console.log(newdata)
+    }
+    function handleNavigator(e, categorie) {
+        const newdata = { ...data }
+        newdata.navigator.angebot[e.target.id] = e.target.value
+        setData(newdata)
+        console.log(newdata)
+    }
+    
    
     
     return ( 
@@ -33,8 +97,8 @@ function App() {
                 
         <Routes>
                 <Route path="/" element={<Willkommen/>}/>        
-                <Route path="/Projektbeschreibung" element={<Projektbeschreibung handle={handle} data={data}/>}/>   
-                <Route path="/Navigator" element={<Navigator handle={handle} data={data}/>}/>  
+                <Route path="/Projektbeschreibung" element={<Projektbeschreibung handle={handleProjectdescription} data={data}/>}/>   
+                <Route path="/Navigator" element={<Navigator handle={handleNavigator} data={data}/>}/>  
                 <Route path="/Last" element={<Last/>}/>  
                 
             </Routes>
