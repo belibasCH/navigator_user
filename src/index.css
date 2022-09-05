@@ -37,6 +37,8 @@ p {
     margin-left: -25vh;
     top: 45.2%;
     transform: translateY(-50%) rotate(-30deg);
+    transition-duration: 2s;
+    transition-timing-function: ease-out;
 }
 
 .navigator_shine {

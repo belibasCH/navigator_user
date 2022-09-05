@@ -81,7 +81,7 @@ function App() {
         setData(newdata)
         console.log(newdata)
     }
-    function handleNavigator(e, categorie) {
+    function handleNavigator(e) {
         const newdata = { ...data }
         newdata.navigator['angebot'][e.target.id] = e.target.value
         setData(newdata)
