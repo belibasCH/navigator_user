@@ -12,8 +12,6 @@ function Willkommen() {
                     <div className="flex-1 flex flex-col justify-center">
                         <img className="object-none" src="img/navigator.png" alt="" />
                     </div>
-                    <div>test</div>
-                    <div>json content</div>
                     <div className="flex-none flex justify-end gap-6">
                     <SecondaryButton text="Was ist der Navigator" path="/" />
                     <PrimaryButton text="Los gehts!" path="/Projektbeschreibung" />

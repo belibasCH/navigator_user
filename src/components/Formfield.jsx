@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const Formfield = ({ onChange, label, placeholder, data, id }) => {
+
     return (
         <div className="">
             <label className="block text-gray-700 text-sm font-bold mb-2 mt-4"  >{label}</label>

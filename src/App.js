@@ -4,8 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Willkommen from "./components/Pages/Willkommen"
 import Projektbeschreibung from "./components/Pages/Projektbeschreibung"
 import Navigator from "./components/Pages/Navigator"
+import Person from "./components/Pages/Person"
 import Last from "./components/Pages/Last"
 
+let server_url = "localhost:8080/server";
 
 function App() {
     //const url = "http://localhost:8080/server";
@@ -81,10 +83,41 @@ function App() {
     }
     function handleNavigator(e, categorie) {
         const newdata = { ...data }
-        newdata.navigator.angebot[e.target.id] = e.target.value
+        newdata.navigator['angebot'][e.target.id] = e.target.value
         setData(newdata)
         console.log(newdata)
     }
+
+     //const [token, setToken] = useState("");
+
+
+     const vote = async (answer) => {
+
+        // const voteDTO = {
+        //     token: token,
+        //     answer: answer.message === "Yes",
+        // };
+        const url =
+            "http://" + server_url + "/navigators/1/answers";
+        const request = new Request(url, {
+            method: "POST",
+            headers: new Headers({
+                "Content-Type": "application/json",
+            }),
+            body: JSON.stringify(data),
+        });
+        try {
+            const response = await fetch(request);
+            if (!response.ok) {
+                throw Error(
+                    "HTTP Status Code received: " + response.status
+                );
+            }
+        } catch (error) {
+            console.error(error);
+        }
+
+    };
     
    
     
@@ -99,6 +132,7 @@ function App() {
                 <Route path="/" element={<Willkommen/>}/>        
                 <Route path="/Projektbeschreibung" element={<Projektbeschreibung handle={handleProjectdescription} data={data}/>}/>   
                 <Route path="/Navigator" element={<Navigator handle={handleNavigator} data={data}/>}/>  
+                <Route path="/Person" element={<Person handle={handlePerson} data={data}/>}/>  
                 <Route path="/Last" element={<Last/>}/>  
                 
             </Routes>

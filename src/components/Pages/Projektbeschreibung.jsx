@@ -3,6 +3,8 @@ import PrimaryButton from '../PrimaryButton'
 import SecondaryButton from '../SecondaryButton'
 import Formfield from '../Formfield'
 
+import FormfieldSmall from '../FormfieldSmall'
+
 
 const Projektbeschreibung= ({handle, data}) =>{
 
@@ -18,7 +20,7 @@ const Projektbeschreibung= ({handle, data}) =>{
                     <h2>Teilen Sie Ihre Idee</h2>
                     <form className="bg-white pt-6 pb-8 mb-4">
 
-                        <Formfield onChange={handle} data= {data.projektname} label="Projektname" id="projektname" placeholder="Geben Sie Ihrem Projekt einen Titel" />
+                        <FormfieldSmall onChange={handle} data= {data.projektname} label="Projektname" id="projektname" placeholder="Geben Sie Ihrem Projekt einen Titel" />
                         <Formfield onChange={handle} data={data.problemstellung} label="Problemstellung" id="problemstellung" placeholder="Beschreiben Sie Ihre Problemstellung" />
                         <Formfield onChange={handle} data={data.zielgruppe} label="Zielgruppe" id="zielgruppe" placeholder="Welche Akteure/Personen/Organisationen wollen Sie ansprechen?" />
                         <Formfield onChange={handle} data={data.ziel} label="Ziel" id="ziel" placeholder="Welche Wirkung wollen Sie bei dieser Zielgruppe erzielen?" />

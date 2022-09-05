@@ -11,7 +11,7 @@ const Navbar = () => {
                     <ListItem link="/" text="Willkommen" color="bg-secondary-100"/>
                     <ListItem link="/Projektbeschreibung" text="Projektbeschreibung" color="bg-secondary-200"/>
                     <ListItem link="/Navigator" text="Navigator" color="bg-secondary-300"/>
-                    <ListItem link="/Last" text="Danke!" color="bg-secondary-400"/>
+                    <ListItem link="/Person" text="Abschluss" color="bg-secondary-400"/>
 
 
                     
