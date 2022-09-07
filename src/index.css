@@ -32,18 +32,46 @@ p {
     color: red;
 }
 
-.navigator {
-    height: 60vh;
-    margin-left: -25vh;
-    top: 45.2%;
-    transform: translateY(-50%) rotate(-30deg);
-    transition-duration: 2s;
-    transition-timing-function: ease-out;
+@media (max-width: 768px) {
+    .navigator {
+        width: 100vw;
+        margin-top: -50vw;
+        transform: rotate(60deg);
+        transition-duration: 2s;
+        transition-timing-function: ease-out;
+    }
 }
 
-.navigator_shine {
-    height: 80vh;
-    margin-left: -17vh;
-    top: 50%;
-    transform: translateY(-50%);
+@media (min-width: 768px) {
+    .navigator {
+        height: 110vh;
+        margin-left: -60vh;
+        top: 0;
+        transform: rotate(-30deg);
+        transition-duration: 2s;
+        transition-timing-function: ease-out;
+    }
+}
+
+body {
+    overflow: hidden;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+
+/* hide scrollbar but allow scrolling */
+
+.kategorie {
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    /* for Firefox */
+    overflow-y: scroll;
+}
+
+.kategorie::-webkit-scrollbar {
+    display: none;
+    /* for Chrome, Safari, and Opera */
 }

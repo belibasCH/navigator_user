@@ -7,7 +7,7 @@ function ListItem({link, text, color}) {
         <NavLink
             to={link}
             className={({ isActive }) =>
-                (isActive ? 'bg-primary-100 text-primary-200 basis-1/4 flex justify-center place-items-center' :  color +" basis-1/4 flex justify-center place-items-center")}>
+                (isActive ? 'bg-primary-100 text-primary-200 md:basis-1/4 grow flex justify-center place-items-center' :  color +" hidden md:flex basis-1/4 flex justify-center place-items-center")}>
             {text}
         </NavLink>
 

@@ -4,13 +4,13 @@ import SecondaryButton from '../SecondaryButton'
 import FormfieldSmall from '../FormfieldSmall'
 
 
-const Person = ({ handle, data }) => {
+const Person = ({ handle, data, vote }) => {
     return (
                <>
         <div className="basis-1/3">
                 <img className='object-cover h-full object-center' src="img/bec.jpg" alt="" />
             </div>
-            <div className="basis-2/3 flex flex-col  p-16 overflow-y-scroll">
+            <div className="basis-2/3 flex flex-col p-8 md:p-16 overflow-y-scroll">
                 <div className="flex-1 flex flex-col">
                     <h1>Fast geschafft!</h1>
                     <div className="bg-primary-100 h-1 w-32"></div>
@@ -25,8 +25,8 @@ const Person = ({ handle, data }) => {
 
                 </div>
                 <div className="flex-none flex justify-end gap-6">
-                    <SecondaryButton text="zurück" path="/" />
-                    <PrimaryButton text="senden und abschlissen" path="/Last" />
+                    <SecondaryButton text="zurück" path="/Navigator" />
+                    <PrimaryButton text="senden und abschlissen" path="/Last" vote={vote}/>
 
                 </div>
             </div>

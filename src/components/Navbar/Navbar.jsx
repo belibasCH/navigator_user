@@ -5,7 +5,7 @@ import ListItem from '../ListItem'
 
 const Navbar = () => {
     return (
-        <header className="fixed w-screen">
+        <header className="fixed w-screen z-20">
             <nav className="">
                 <ul className="flex flex-row h-16">
                     <ListItem link="/" text="Willkommen" color="bg-secondary-100"/>

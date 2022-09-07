@@ -11,7 +11,7 @@ let server_url = "localhost:8080/server";
 
 function App() {
     //const url = "http://localhost:8080/server";
-    const [data, setData] = useState({
+    const [navigator, setNavigator] = useState({
         person: {
             name: "",
             company: "",
@@ -24,87 +24,146 @@ function App() {
             zielgruppe: "",
             ziel: ""
         },
-    
-        navigator: {
+
+        tool: {
             id: 1,
             angebot: {
+                afrage: "Was sind die öffentlich zugänglichen Angebote?",
                 a: "",
+                bfrage: "Was sind die privatwirtschaftlichen Angebote?",
                 b: "",
+                cfrage: "Was für Angebote werden zusätzlich benötigt?",
                 c: "",
+                dfrage: "Wie wichtig sind die Angebote zur Erreichung des Ziels?",
                 d: 0
+
             },
             rahmenbedingungen: {
+                afrage: "Welche Rahmenbedingungen sind für Sie relevant und beeinflussbar?",
                 a: "",
+                bfrage: "Welche Rahmenbedingungen sind für Sie relevant und nicht beeinflussbar?",
                 b: "",
+                cfrage: "Was müsste sich in den Rahmenbedingungen ändern, um Ihr Ziel zu erreichen?",
                 c: "",
+                dfrage: "Wie wichtig sind die Rahmenbedingungen für die Zielerreichung?",
                 d: 0
             },
             geisteshaltung: {
+                afrage: "Welche Haltung und Motivation haben die Befürworter der Zielsetzung?",
                 a: "",
+                bfrage: "Welche Haltung und Motivation haben die Gegner der Zielsetzung?",
                 b: "",
+                cfrage: "Was müsste sich in der Haltung und Motivation verändern, um das Ziel zu erreichen?",
                 c: "",
+                dfrage: "Wie wichtig ist diese Veränderung zur Erreichung des Ziels?",
                 d: 0
             },
             kompetenz: {
+                afrage: "Welche Wissen und Fertigkeiten sind bereits vorhanden?",
                 a: "",
+                bfrage: "Welche Wissen und Fertigkeiten werden zusätzlich benötigt?",
                 b: "",
-                c: "",
+                dfrage: "Wie wichtig sind Wissen und Fertigkeiten zur Erreichung des Ziels",
                 d: 0
             },
             infrastruktur: {
+                afrage: "Welche digitale Infrastruktur ist bereits vorhanden?",
                 a: "",
+                bfrage: "Welche physische Infrastruktur ist bereits vorhanden?",
                 b: "",
+                cfrage: "Was für Infrastruktur wird zusätzlich benötigt?",
                 c: "",
+                dfrage: "Wie wichtig ist die physische Infrastruktur für die Erreichung der Ziele?",
                 d: 0
             },
             kommunikation: {
+                afrage: "Beschreiben Sie die Kommunikation nach innen mit involvierten Personen/Organisationen",
                 a: "",
+                bfrage: "Beschreiben Sie die Kommunikation nach aussen",
                 b: "",
+                cfrage: "Wie müsste die Kommunikation verbessert werden, um das Ziel zu erreichen?",
                 c: "",
+                dfrage: "Wie wichtig ist die Kommunikation zur Erreichung des Ziels?",
                 d: 0
             }
-           
+
         }
-    
-    
+
+
     })
-    
+
     function handleProjectdescription(e) {
-        const newdata = { ...data }
+        const newdata = { ...navigator }
         newdata.projekt[e.target.id] = e.target.value
-        setData(newdata)
+        setNavigator(newdata)
         console.log(newdata)
     }
     function handlePerson(e) {
-        const newdata = { ...data }
-        newdata.projekt[e.target.id] = e.target.value
-        setData(newdata)
+        const newdata = { ...navigator }
+        newdata.person[e.target.id] = e.target.value
+        setNavigator(newdata)
         console.log(newdata)
     }
-    function handleNavigator(e) {
-        const newdata = { ...data }
-        newdata.navigator['angebot'][e.target.id] = e.target.value
-        setData(newdata)
+    function handleNavigatorAngebot(e) {
+        const newdata = { ...navigator }
+        newdata.tool.angebot[e.target.id] = e.target.value
+        setNavigator(newdata)
         console.log(newdata)
     }
+    function handleNavigatorRahmenbedingungen(e) {
+        const newdata = { ...navigator }
+        newdata.tool.rahmenbedingungen[e.target.id] = e.target.value
+        setNavigator(newdata)
+        console.log(newdata)
+    }
+    function handleNavigatorGeisteshaltung(e) {
+        const newdata = { ...navigator }
+        newdata.tool.geisteshaltung[e.target.id] = e.target.value
+        setNavigator(newdata)
+        console.log(newdata)
+    }
+    function handleNavigatorKompetenz(e) {
+        const newdata = { ...navigator }
+        newdata.tool.kompetenz[e.target.id] = e.target.value
+        setNavigator(newdata)
+        console.log(newdata)
+    }
+    function handleNavigatorInfrasturktur(e) {
+        const newdata = { ...navigator }
+        newdata.tool.infrastruktur[e.target.id] = e.target.value
+        setNavigator(newdata)
+        console.log(newdata)
+    }
+    function handleNavigatorKommunikation(e) {
+        const newdata = { ...navigator }
+        newdata.tool.kommunikation[e.target.id] = e.target.value
+        setNavigator(newdata)
+        console.log(newdata)
+    }
+    const handler = {
+        angebot: handleNavigatorAngebot,
+        rahmenbedingungen: handleNavigatorRahmenbedingungen,
+        geisteshaltung: handleNavigatorGeisteshaltung,
+        kompetenz: handleNavigatorKompetenz,
+        infrastruktur: handleNavigatorInfrasturktur,
+        kommunikation: handleNavigatorKommunikation,
 
-     //const [token, setToken] = useState("");
+    }
 
 
-     const vote = async (answer) => {
 
-        // const voteDTO = {
-        //     token: token,
-        //     answer: answer.message === "Yes",
-        // };
+    //const [token, setToken] = useState("");
+
+
+    const vote = async (answer) => {
         const url =
-            "http://" + server_url + "/navigators/1/answers";
+            "http://" + server_url + "/answers";
         const request = new Request(url, {
             method: "POST",
             headers: new Headers({
                 "Content-Type": "application/json",
             }),
-            body: JSON.stringify(data),
+            body: JSON.stringify(navigator),
         });
         try {
             const response = await fetch(request);
@@ -118,28 +177,28 @@ function App() {
         }
 
     };
-    
-   
-    
-    return ( 
+
+
+
+    return (
         <BrowserRouter>
-    <div className="text-gray-600 h-screen">
-        <Navbar /> 
-        <main className="h-full border-t-16">
-            <div className="flex flex-row h-full">
-                
-        <Routes>
-                <Route path="/" element={<Willkommen/>}/>        
-                <Route path="/Projektbeschreibung" element={<Projektbeschreibung handle={handleProjectdescription} data={data}/>}/>   
-                <Route path="/Navigator" element={<Navigator handle={handleNavigator} data={data}/>}/>  
-                <Route path="/Person" element={<Person handle={handlePerson} data={data}/>}/>  
-                <Route path="/Last" element={<Last/>}/>  
-                
-            </Routes>
-            
+            <div className="text-gray-600 h-screen">
+                <Navbar />
+                <main className="h-full border-t-16">
+                    <div className="flex md:flex-row flex-col h-full">
+
+                        <Routes>
+                            <Route path="/" element={<Willkommen />} />
+                            <Route path="/Projektbeschreibung" element={<Projektbeschreibung handle={handleProjectdescription} data={navigator} />} />
+                            <Route path="/Navigator" element={<Navigator handle={handler} data={navigator} />} />
+                            <Route path="/Person" element={<Person handle={handlePerson} vote={vote} data={navigator} />} />
+                            <Route path="/Last" element={<Last />} />
+
+                        </Routes>
+
+                    </div>
+                </main>
             </div>
-        </main>
-    </div>
         </BrowserRouter>
     );
 }

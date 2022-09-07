@@ -10,10 +10,10 @@ const Projektbeschreibung= ({handle, data}) =>{
 
     return (
         <>
-        <div className="basis-1/3">
-                <img className='object-cover h-full object-center' src="img/leo.jpg" alt="" />
+         <div className="md:basis-1/3 md:h-full  h-48">
+                <img className='object-cover h-full w-full md:object-center object-top' src="img/leo.jpg" alt="" />
             </div>
-            <div className="basis-2/3 flex flex-col  p-16 overflow-y-scroll">
+            <div className="basis-2/3 flex flex-col p-8 md:p-16 overflow-y-scroll">
                 <div className="flex-1 flex flex-col">
                     <h1>Projektbeschreibung</h1>
                     <div className="bg-primary-100 h-1 w-32"></div>
