@@ -11,7 +11,7 @@ const NavigatorForm = ({ handle, data, weiter, zuruck, state}) => {
             console.log('Angebot');
             return (<>
                 <div className="flex flex-col justify-between kategorie">
-                    <Kategorie handle={handle.angebot} data={data.navigator.angebot} weiter={weiter} zuruck={zuruck}  title="Angebot" />
+                    <Kategorie handle={handle.angebot} data={data.tool.angebot} weiter={weiter} zuruck={zuruck}  title="Angebot" />
         
                 </div></>);
             break;
@@ -19,7 +19,7 @@ const NavigatorForm = ({ handle, data, weiter, zuruck, state}) => {
             console.log('Rahmenbedingungen');
             return (<>
                 <div className="flex flex-col justify-between kategorie">
-                    <Kategorie handle={handle.rahmenbedingungen} data={data.navigator.rahmenbedingungen} weiter={weiter} zuruck={zuruck} title="Rahmenbedingungen" />
+                    <Kategorie handle={handle.rahmenbedingungen} data={data.tool.rahmenbedingungen} weiter={weiter} zuruck={zuruck} title="Rahmenbedingungen" />
 
 
                 </div></>);
@@ -28,7 +28,7 @@ const NavigatorForm = ({ handle, data, weiter, zuruck, state}) => {
             console.log('Geisteshaltung');
             return (<>
                 <div className="flex flex-col justify-between kategorie">
-                    <Kategorie handle={handle.geisteshaltung} data={data.navigator.geisteshaltung} weiter={weiter} zuruck={zuruck} title="Geisteshaltung" />
+                    <Kategorie handle={handle.geisteshaltung} data={data.tool.geisteshaltung} weiter={weiter} zuruck={zuruck} title="Geisteshaltung" />
 
 
                     </div></>);
@@ -37,7 +37,7 @@ const NavigatorForm = ({ handle, data, weiter, zuruck, state}) => {
             console.log('Kompetenz');
             return (<>
                 <div className="flex flex-col justify-between kategorie">
-                    <Kategorie handle={handle.kompetenz} data={data.navigator.kompetenz} weiter={weiter} zuruck={zuruck} title="Kompetenz" />
+                    <Kategorie handle={handle.kompetenz} data={data.tool.kompetenz} weiter={weiter} zuruck={zuruck} title="Kompetenz" />
 
 
                     </div></>);
@@ -46,7 +46,7 @@ const NavigatorForm = ({ handle, data, weiter, zuruck, state}) => {
             console.log('Infrastruktur');
             return (<>
                 <div className="flex flex-col justify-between kategorie">
-                    <Kategorie handle={handle.infrastruktur} data={data.navigator.infrastruktur} weiter={weiter} zuruck={zuruck} title="Infrastruktur" />
+                    <Kategorie handle={handle.infrastruktur} data={data.tool.infrastruktur} weiter={weiter} zuruck={zuruck} title="Infrastruktur" />
 
 
                     </div></>);
@@ -55,7 +55,7 @@ const NavigatorForm = ({ handle, data, weiter, zuruck, state}) => {
             console.log('Kommunikation');
             return (<>
                 <div className="flex flex-col justify-between kategorie">
-                    <Kategorie handle={handle.kommunikation} data={data.navigator.kommunikation} weiter={weiter} zuruck={zuruck} title="Kommunikation" />
+                    <Kategorie handle={handle.kommunikation} data={data.tool.kommunikation} weiter={weiter} zuruck={zuruck} title="Kommunikation" />
                     </div></>);
             break;
 

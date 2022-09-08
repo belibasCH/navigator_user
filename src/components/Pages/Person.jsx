@@ -27,6 +27,7 @@ const Person = ({ handle, data, vote }) => {
                 <div className="flex-none flex justify-end gap-6">
                     <SecondaryButton text="zurück" path="/Navigator" />
                     <PrimaryButton text="senden und abschlissen" path="/Last" vote={vote}/>
+                   
 
                 </div>
             </div>

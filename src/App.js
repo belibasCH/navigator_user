@@ -10,8 +10,8 @@ import Last from "./components/Pages/Last"
 let server_url = "localhost:8080/server";
 
 function App() {
-    //const url = "http://localhost:8080/server";
     const [navigator, setNavigator] = useState({
+        id: "",
         person: {
             name: "",
             company: "",
@@ -150,14 +150,12 @@ function App() {
 
     }
 
-
-
     //const [token, setToken] = useState("");
 
 
     const vote = async (answer) => {
         const url =
-            "http://" + server_url + "/answers";
+            "http://" + server_url + "/navigators";
         const request = new Request(url, {
             method: "POST",
             headers: new Headers({
@@ -186,16 +184,13 @@ function App() {
                 <Navbar />
                 <main className="h-full border-t-16">
                     <div className="flex md:flex-row flex-col h-full">
-
                         <Routes>
                             <Route path="/" element={<Willkommen />} />
                             <Route path="/Projektbeschreibung" element={<Projektbeschreibung handle={handleProjectdescription} data={navigator} />} />
                             <Route path="/Navigator" element={<Navigator handle={handler} data={navigator} />} />
                             <Route path="/Person" element={<Person handle={handlePerson} vote={vote} data={navigator} />} />
                             <Route path="/Last" element={<Last />} />
-
                         </Routes>
-
                     </div>
                 </main>
             </div>
