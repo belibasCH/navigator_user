@@ -8,8 +8,8 @@ function Willkommen() {
             <img className='object-cover h-full w-full md:object-right object-top' src="img/csc_ast.png" alt="" />
         </div>
         <div className="basis-2/3 flex flex-col p-8 md:p-16">
-            <div className="flex-1 flex flex-col justify-center">
-                <img className="md:object-none" src="img/navigator.png" alt="" />
+            <div className="flex-1 flex flex-col justify-center place-items-center">
+                <img className="w-96" src="img/navigator.png" alt="" />
             </div>
             <div className="flex-none flex justify-end gap-6">
                 <SecondaryButton text="Was ist der Navigator" path="/" />
